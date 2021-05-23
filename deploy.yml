@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   cron:
-    image: tombeynon/akash-postgres-restore:v0.0.1
+    image: tombeynon/akash-postgres-restore:v0.0.2
     env:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DATABASE=postgres-restore

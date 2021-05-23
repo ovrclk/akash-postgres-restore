@@ -16,7 +16,7 @@ echo "PostgreSQL started"
 declare -p | grep -Ev 'BASHOPTS|BASH_VERSINFO|EUID|PPID|SHELLOPTS|UID' > /container.env
 
 # install crontab
-sed -e "s/\${BACKUP_SCHEDULE}/$BACKUP_SCHEDULE/" /crontab > /etc/cron.d/scheduler
+sed -e "s#\${BACKUP_SCHEDULE}#$BACKUP_SCHEDULE#" /crontab > /etc/cron.d/scheduler
 chmod +x /etc/cron.d/scheduler
 crontab /etc/cron.d/scheduler
 
