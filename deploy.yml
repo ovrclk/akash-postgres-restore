@@ -6,8 +6,8 @@ services:
     image: tombeynon/akash-postgres-restore:v0.0.2
     env:
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DATABASE=postgres-restore
-      - BACKUP_PATH=mybucket
+      - POSTGRES_DATABASE=akash_postgres
+      - BACKUP_PATH=mybucket/backups
       - BACKUP_KEY=KEY
       - BACKUP_SECRET=SECRET
       - BACKUP_PASSPHRASE=passphrase
@@ -19,7 +19,6 @@ services:
       - POSTGRES_PASSWORD=password
     expose:
       - port: 5432
-        proto: tcp
         to:
           - global: true
           - service: cron

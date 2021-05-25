@@ -15,7 +15,7 @@ ENV POSTGRES_USER=postgres
 
 ENV BACKUP_HOST="https://s3.filebase.com"
 ENV BACKUP_SCHEDULE="*/15 * * * *"
-ENV KEEP_BACKUPS="7 days"
+ENV BACKUP_RETAIN="7 days"
 
 COPY ./crontab /crontab
 
