@@ -23,7 +23,7 @@ services:
     depends_on: 
       - service: postgres
   cron:
-    image: tombeynon/akash-postgres-restore:v0.0.2
+    image: ghcr.io/ovrclk/akash-postgres-restore:v0.0.4
     env:
       - POSTGRES_PASSWORD=password
       ...
