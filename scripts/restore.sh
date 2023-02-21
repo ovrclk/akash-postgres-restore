@@ -49,8 +49,8 @@ else
 
   echo "Restoring from backup..."
   pg_restore --clean \
-             -h postgres \
-             -p 5432 \
+             -h "${POSTGRES_HOST:-postgres}" \
+             -p "${POSTGRES_PORT:-5432}" \
              -U $POSTGRES_USER \
              -d $POSTGRES_DATABASE \
              $PG_RESTORE_EXTRA_OPTS \
