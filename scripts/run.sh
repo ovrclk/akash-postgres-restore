@@ -1,8 +1,7 @@
 #!/bin/bash
 
 set -e
-
-while ! nc -z postgres 5432; do
+while ! nc -z "${POSTGRES_HOST:-postgres}" "${POSTGRES_PORT:-5432}"; do
   echo "waiting for postgress listening..."
   sleep 0.1
 done
