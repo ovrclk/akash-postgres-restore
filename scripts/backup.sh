@@ -12,8 +12,8 @@ export AWS_SECRET_ACCESS_KEY=$BACKUP_SECRET
 export PGPASSWORD=$POSTGRES_PASSWORD
 
 pg_dump --format=custom \
-        -h postgres \
-        -p 5432 \
+        -h "${POSTGRES_HOST:-postgres}" \
+        -p "${POSTGRES_PORT:-5432}" \
         -U $POSTGRES_USER \
         -d $POSTGRES_DATABASE \
         $PGDUMP_EXTRA_OPTS \
